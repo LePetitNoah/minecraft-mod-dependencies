@@ -1,0 +1,5 @@
+generated
+dependencies
+lib
+__pycache__
+.env
