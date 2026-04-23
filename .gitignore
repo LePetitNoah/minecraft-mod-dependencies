@@ -3,3 +3,4 @@ dependencies
 lib
 __pycache__
 .env
+.vscode

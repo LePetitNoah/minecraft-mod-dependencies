@@ -2,6 +2,28 @@
 
 > Ce repository a pour but de récupérer les dépendances d'un ou plusieurs mods Minecraft en utilisant l'API mise à disposition par CurseForge.
 
+## Installation
+
+### Méthode rapide (Windows)
+
+1. Double-cliquez sur `setup.bat`
+2. Le script va vérifier l'installation de Python, l'installer si nécessaire, et installer les dépendances
+3. Configurez votre clé API CurseForge dans le fichier `.env` créé automatiquement
+
+### Méthode manuelle
+
+1. Assurez-vous que Python 3.8+ est installé
+2. Installez les dépendances :
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Créez un fichier `.env` à la racine du projet avec votre clé API :
+   ```
+   API_KEY=YOUR_API_KEY_HERE
+   ```
+
+> 💡 Récupérez votre clé API gratuite sur [CurseForge Console](https://console.curseforge.com/)
+
 ## Comment ça marche ?
 
 Il vous suffit d'aller dans le fichier main.py, d'y renseigner la liste des slugs des mods d'ont vous souhaitez avoir les informations et de lancer le programme.
@@ -10,14 +32,22 @@ Ce qui vous génèrera un dossier avec l'ensemble des fichiers (un fichier = un 
 ## Comment récupérer le slug d'un mod ?
 
 C'est plutôt simple, vous avez deux méthodes :
- - Vous rendre sur CurseForge, aller sur la page du mod dont vous souhaité avoir le slug et il s'agit du texte situé dans l'URL à cet emplacement :
+
+- Vous rendre sur CurseForge, aller sur la page du mod dont vous souhaité avoir le slug et il s'agit du texte situé dans l'URL à cet emplacement :
+
 ```
 https://www.curseforge.com/minecraft/mc-mods/iron-chests <- Ici le slug est iron-chests
 ```
- - Ouvrir le fichier research.py, renseigner le nom du mod, la version de Minecraft et le modLoaderType puis lancer le programme. Vous verrez alors dans la console une liste de mod, plus qu'à trouver le bon et à récupérer le slug. Il est possible que le mod souhaité n'apparaisse pas, il faut alors augmenté l'index de 50 dans les params, jusqu'à trouver votre mod.
+
+- Ouvrir le fichier research.py, renseigner le nom du mod, la version de Minecraft et le modLoaderType puis lancer le programme. Vous verrez alors dans la console une liste de mod, plus qu'à trouver le bon et à récupérer le slug. Il est possible que le mod souhaité n'apparaisse pas, il faut alors augmenté l'index de 50 dans les params, jusqu'à trouver votre mod.
 
 ## Visualisation
 
 Ensuite, il est possible de visualiser tout ça de deux manières différentes :
- - Dans la console sous forme de liste hiérarchique (console.py)
- - Dans un fichier HTML (graph.py)
+
+- Dans la console sous forme de liste hiérarchique (console.py)
+- Dans un fichier HTML (graph.py)
+
+## Page Web
+
+Il est aussi possible d'éxécuter le script app.py qui lance un server local pour faire vos recherches de dépendances avec une interface utilisateur.
